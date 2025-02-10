@@ -1,0 +1,111 @@
+<html>
+  <head>
+    <script type = "text/javascript" src = "https://www.gstatic.com/charts/loader.js"></script>
+    <script language = "JavaScript">
+      google.charts.load('current', {'packages': ['corechart']});
+      google.charts.setOnLoadCallback(drawPieWeek);
+      function drawPieWeek(){
+        var data = google.visualization.arrayToDataTable([
+        ['Expenses', 'Amount'],
+        ['Food',  10.50],
+        ['Gas',  87.00],
+        ['Restaurant',  56.60],
+        ['Available',  85.90]
+        ]);
+        var options = {pieHole:0.4,legend:'none',fontSize:22,chartArea:{width:'100%',left:'0%'},pieSliceText:'label',slices:{
+        0: { color: '#66AA00' },
+        1: { color: '#5574A6' },
+        2: { color: '#E67300' },
+        3: { color: '#DD4477' },
+        4: { color: '#DC3912' },
+        5: { color: '#22AA99' },
+        6: { color: '#994499' },
+        7: { color: '#0099C6' },
+        3: { color: '#FFFFFF' }
+        }};
+        var chart = new google.visualization.PieChart(document.getElementById('pieweek_div'));
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div class="top">Current month</div>
+    <div class="top">from 2025-02-01 to 2025-02-28</div>
+    <table class="table">
+    <tr>
+    <td><div id = "pieweek_div" style="height: 800px;"</div></td>
+    </tr>
+    </table>
+    <table class="nice-table">
+    <tr><th>Expenses</th><th>Amount</th><th>2025</th><th>2024</th></tr>
+        <tr><td>Food</td><td>     10.50</td><td>      0.00</td><td>      0.79</td></tr>
+        <tr><td>Gas</td><td>     87.00</td><td>      0.00</td><td>      5.17</td></tr>
+        <tr><td>Restaurant</td><td>     56.60</td><td>      0.00</td><td>      7.75</td></tr>
+        <tr><th>Total amount</th><th>    154.10</th><th>      0.00</th><th>     13.71</th></tr>
+        <tr><td>Available budget</td><td>     85.90</td><td></td><td></td></tr>
+    
+    </table>
+    <table class="nice-table">
+    <tr><th>Date</th><th>Shop</th><th>Expense</th><th>Amount</th></tr>
+        <tr><td>02-08</td><td>Food shop</td><td>Food</td><td>     10.50</td></tr>
+        <tr><td>02-09</td><td>Gasoline</td><td>Gas</td><td>     87.00</td></tr>
+        <tr><td>02-10</td><td>The Best Restaurant</td><td>Restaurant</td><td>     56.60</td></tr>
+    
+    </table>
+    <div class="bottom">code v20250210 printed on 2025-02-10 14:22:33</div>
+  </body>
+  <style>
+    .top {
+      border-collapse: collapse;
+      margin: 0 auto;
+      font-size: 2em;
+      font-family: sans-serif;
+      width: 90%;
+      text-align: center;
+    }
+    .table {
+      border-collapse: collapse;
+      margin: 0 auto;
+      font-size: 1.5em;
+      font-family: sans-serif;
+      width: 90%;
+    }
+    .nice-table {
+      border-collapse: collapse;
+      margin: 0 auto;
+      font-size: 1.5em;
+      font-family: sans-serif;
+      width: 90%;
+      margin-bottom: 2cm;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    }
+    .nice-table th {
+      background-color: #009879;
+      color: #ffffff;
+      text-align: left;
+      padding: 12px 15px;
+    }
+    .nice-table td {
+      padding: 12px 15px;
+    }
+    .nice-table tbody tr {
+      border-bottom: 1px solid #dddddd;
+    }
+    .nice-table tbody tr:nth-of-type(even) {
+      background-color: #f3f3f3;
+    }
+    .nice-table tbody tr:last-of-type {
+      border-bottom: 2px solid #009879;
+    }
+    .bottom {
+      border-collapse: collapse;
+      margin: 0 auto;
+      font-size: 1em;
+      font-family: sans-serif;
+      width: 90%;
+      text-align: left;
+      margin-top: 2cm;
+      color: gray;
+    }
+  </style>
+</html>
